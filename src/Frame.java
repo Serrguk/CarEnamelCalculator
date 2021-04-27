@@ -4,26 +4,36 @@ import java.util.Objects;
 
 public class Frame extends JFrame {
 
+    JFrame frame;
+    JPanel panel;
+    JPanel endedPanel;
+    JLabel currentCount;
+    JTextField really;
+    Checkbox checkbox;
+    JButton calculation;
+    JLabel endedCount;
+    JTextField ended;
+    Checkbox checkboxEnded;
 
-    public JFrame getFrame() {
-        JFrame frame = new JFrame("Расчёт объёма");
-        JPanel panel = new JPanel();
-        JPanel endedPanel = new JPanel();
-        JLabel currentCount = new JLabel("Текущее количество эмали");
-        JTextField really = new JTextField(10);
-        Checkbox checkbox = new Checkbox("Густая");
-        JButton calculation = new JButton("Рассчитать");
+    Frame() {
+        frame = new JFrame("Расчёт объёма");
+        panel = new JPanel();
+        endedPanel = new JPanel();
+        currentCount = new JLabel("Текущее количество эмали");
+        really = new JTextField(10);
+        checkbox = new Checkbox("Густая");
+        calculation = new JButton("Рассчитать");
         calculation.setBackground(Color.CYAN);
-        JLabel endedCount = new JLabel("Требуемое количество эмали");
-        JTextField ended = new JTextField(10);
-        Checkbox checkboxEnded = new Checkbox("Густая");
+        endedCount = new JLabel("Требуемое количество эмали");
+        ended = new JTextField(10);
+        checkboxEnded = new Checkbox("Густая");
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension dimension = toolkit.getScreenSize();
 
         ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("paint.jpg")));
         frame.setIconImage(icon.getImage());
-        frame.setBounds(dimension.width / 2 - 300, dimension.height / 2 - 200, 500, 200);
+        frame.setBounds(dimension.width / 2 - 300, dimension.height / 2 - 200, 500, 150);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         endedPanel.add(endedCount);
@@ -36,7 +46,9 @@ public class Frame extends JFrame {
         frame.add(panel, "North");
         frame.add(calculation, "South");
         frame.add(endedPanel);
+        frame.pack();
         frame.setVisible(true);
-        return frame;
+        Engine engine = new Engine();
+        calculation.addActionListener(engine);
     }
 }

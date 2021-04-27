@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CarEnamelCalculation:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CarEnamelCalculation_jar</output-path>
+    <root id="archive" name="CarEnamelCalculation.jar">
+      <element id="module-output" name="CarEnamelCalculation" />
+    </root>
+  </artifact>
+</component>

@@ -48,7 +48,7 @@ public class Frame extends JFrame {
         frame.add(endedPanel);
         frame.pack();
         frame.setVisible(true);
-        Engine engine = new Engine();
+        Engine engine = new Engine(this);
         calculation.addActionListener(engine);
     }
 }

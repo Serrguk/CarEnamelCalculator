@@ -28,7 +28,7 @@ public class Engine implements ActionListener {
                     JOptionPane.showConfirmDialog(parent, message, "Результат", JOptionPane.DEFAULT_OPTION);
                 } else if (!parent.checkbox.getState() && parent.checkboxEnded.getState()) {
                     message = String.format("Нужно долить %.2f граммов готовой (%.2f густой), для этого все компоненты умножьте на %.2f." +
-                                    "\nЕсли эмаль нужна в готовом виде, просто не наливайте разбавитель.",
+                                    "\nЕсли эмаль нужна в густом виде, просто не наливайте разбавитель.",
                             (secondTextField * 1.5 - firstTextField),((secondTextField * 1.5 - firstTextField) / 1.5),
                             ((secondTextField * 1.5 - firstTextField)) / firstTextField);
                     JOptionPane.showConfirmDialog(parent, message, "Результат", JOptionPane.DEFAULT_OPTION);

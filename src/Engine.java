@@ -36,7 +36,7 @@ public class Engine implements ActionListener {
                     message = String.format("Нужно долить %.2f граммов густой (%.2f готовой), для этого все компоненты умножьте на %.2f." +
                                     "\nВ случае необходимости долить %.2f грамма разбавителя.",
                             (secondTextField / 1.5 - firstTextField),((secondTextField / 1.5 - firstTextField) * 1.5),
-                            ((secondTextField / 1.5 - firstTextField)) / firstTextField, ((secondTextField / 1.5 - firstTextField) / 1.5));
+                            ((secondTextField / 1.5 - firstTextField)) / firstTextField, (((secondTextField / 1.5 - firstTextField) / 100) * 60));
                     JOptionPane.showConfirmDialog(parent, message, "Результат", JOptionPane.DEFAULT_OPTION);
                 } else {
                     message = String.format("Нужно долить %.2f граммов густой, для этого все компоненты умножьте на %.2f." +
